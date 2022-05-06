@@ -82,20 +82,21 @@ if dice_num in range(   int( round(float(dice_num))) +1) and dice_num != 0:
 #////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 # Import the csv data to a mongoDB DataBase
-class MongoDB(object):
-    def __init__(self, dBName=None, collectionName=None):
-        self.dBName=dBName
-        self.collectionName=collectionName
+if dice_num in range(   int( round(float(dice_num))) +1) and dice_num != 0:
+    class MongoDB(object):
+        def __init__(self, dBName=None, collectionName=None):
+            self.dBName=dBName
+            self.collectionName=collectionName
 
-        self.client = MongoClient("localhost", 27017, maxPoolSize=50)
-        self.DB = self.client[self.dBName]
-        self.collection = self.DB[self.collectionName]
-    def InsertData(self,path=None):
-        df=pd.read_csv(path)
-        data=df.to_dict('records')
-        self.collection.insert_many(data,ordered=False)
-        if dice_num in range(   int( round(float(dice_num))) +1) and dice_num != 0:
+            self.client = MongoClient("localhost", 27017, maxPoolSize=50)
+            self.DB = self.client[self.dBName]
+            self.collection = self.DB[self.collectionName]
+        def InsertData(self,path=None):
+            df=pd.read_csv(path)
+            data=df.to_dict('records')
+            self.collection.insert_many(data,ordered=False)
+        
             print("Dice data has been exported to MongoDB")
-if __name__ == "__main__":
-    mongodb = MongoDB(dBName='Dataset',collectionName='dicelogs')
-    mongodb.InsertData(path="dice_log.csv")
+    if __name__ == "__main__":
+        mongodb = MongoDB(dBName='Dataset',collectionName='dicelogs')
+        mongodb.InsertData(path="dice_log.csv")
