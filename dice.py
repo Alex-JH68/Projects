@@ -94,7 +94,8 @@ class MongoDB(object):
         df=pd.read_csv(path)
         data=df.to_dict('records')
         self.collection.insert_many(data,ordered=False)
-        print("Dice data has been exported to MongoDB")
+        if dice_num in range(   int( round(float(dice_num))) +1) and dice_num != 0:
+            print("Dice data has been exported to MongoDB")
 if __name__ == "__main__":
     mongodb = MongoDB(dBName='Dataset',collectionName='dicelogs')
     mongodb.InsertData(path="dice_log.csv")
