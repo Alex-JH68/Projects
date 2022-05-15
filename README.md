@@ -2,7 +2,7 @@
 
 This project involves rolling a different amount of dice, writing the results to csv, and uploading it to a server.
 
-##Technologies used
+##TechStack
 
 * Python
 * csv
@@ -10,18 +10,18 @@ This project involves rolling a different amount of dice, writing the results to
 
 # Features
 
-* Able to select 1~6 dice and roll them
+* Able to select up to twenty dice and roll them
+* Able to select the type of dice (4-sided,6-sided,8-sided,12-sided and 20-sided)
+* Read the most recent Dice Log
 * Import the results from csv to a database
-* delete all stored dice roll data on the database 
+* Delete all stored dice roll data on the database 
+* Menu only takes valid inputs
 
-Features still needed for a more complete program:
+# Changes
 
-* menu interface still required
-* ability to input more than just 6-sided die
-* implementing more dice to roll instead of just 6.
+* Menu Interface implemented
+
+# Features still needed for a more complete program:
+
 * selectively updating and replacing specific rolls on mongoDB
 
-Handles only valid inputs:
-* cannot put in non-negative integers
-* cannot put in string values that are non-numeric
-* cannot put in decimal, floating or irrational numbers
