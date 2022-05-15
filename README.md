@@ -16,6 +16,7 @@ This project involves rolling a different amount of dice, writing the results to
 
 Features still needed for a more complete program:
 
+* menu interface still required
 * ability to input more than just 6-sided die
 * implementing more dice to roll instead of just 6.
 * selectively updating and replacing specific rolls on mongoDB
